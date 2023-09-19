@@ -7,7 +7,7 @@ const getIpAddress = (req, res) => {
   const IP2 = `req.header('x-forwarded-for') ==> ${req.header(
     'x-forwarded-for'
   )}`;
-  const IP3 = `req.socket.remoteAddress ==> ${req.socket.remoteAddressq}`;
+  const IP3 = `req.socket.remoteAddress ==> ${req.socket.remoteAddress}`;
   const IP4 = `require('request-ip').getClientIp(req) ==> ${requestIP.getClientIp(
     req
   )}`;
@@ -16,6 +16,7 @@ const getIpAddress = (req, res) => {
   // but below one prints absolute IP
 
   const IP5 = `require('ip').address() ==> ${IP.address()}`;
+  const IP6 = `req.connection.remoteAddress ==> ${req.connection.remoteAddress}`;
 
   res.status(StatusCodes.OK).json({
     IP1,
@@ -23,6 +24,7 @@ const getIpAddress = (req, res) => {
     IP3,
     IP4,
     IP5,
+    IP6,
   });
 };
 
