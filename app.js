@@ -20,6 +20,10 @@ app.use(xss());
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('<a href="/api/v1/getip">Get IP</a>');
+});
+
 app.use('/api/v1', appRouter);
 
 app.use((req, res) => {
