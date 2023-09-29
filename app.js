@@ -9,6 +9,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const xss = require('xss-clean');
 const cors = require('cors');
+app.use(morgan('short'));
 
 // middleware
 const errorHandlerMiddleware = require('./middleware/error-handler');
