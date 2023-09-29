@@ -14,6 +14,7 @@ app.use(morgan('short'));
 // middleware
 const errorHandlerMiddleware = require('./middleware/error-handler');
 const appRouter = require('./routes/appRouter');
+const { getIpAddress } = require('./controllers/appController');
 
 app.use(helmet());
 app.use(cors());
@@ -21,9 +22,11 @@ app.use(xss());
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('<a href="/api/v1/getip">Get IP</a>');
-});
+// app.get('/', (req, res) => {
+//   res.send('<a href="/api/v1/getip">Get IP</a>');
+// });
+
+app.get('/', getIpAddress);
 
 app.use('/api/v1', appRouter);
 
