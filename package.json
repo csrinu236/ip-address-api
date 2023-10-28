@@ -23,6 +23,7 @@
     "netlify-cli": "^16.9.2",
     "netlify-lambda": "^2.0.16",
     "request-ip": "^3.3.0",
+    "serverless-http": "^3.2.0",
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {
